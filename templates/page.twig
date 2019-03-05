@@ -1,0 +1,13 @@
+{% include '/common/header.twig' %}
+
+    <div class="main">
+
+        {% if user is defined %}
+            <p>Hello {{ user.name }}!</p>
+        {% elseif message is defined %}
+        	<p>{{ message }}</p>
+        {% endif %}
+
+    </div>
+
+{% include '/common/footer.twig' %}

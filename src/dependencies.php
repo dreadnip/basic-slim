@@ -17,11 +17,10 @@ $container['view'] = function ($container) {
     return $view;
 };
 
-// monolog
-$container['logger'] = function ($c) {
-    $settings = $c->get('settings')['logger'];
-    $logger = new Monolog\Logger($settings['name']);
-    $logger->pushProcessor(new Monolog\Processor\UidProcessor());
-    $logger->pushHandler(new Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
-    return $logger;
+$container['notFoundHandler'] = function ($c) {
+    return function ($request, $response) use ($c) {
+            return $c->view->render($response, '404.twig') 
+                ->withStatus(404)
+                ->withHeader('Content-Type', 'text/html');
+        };
 };
