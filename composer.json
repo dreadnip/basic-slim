@@ -3,14 +3,6 @@
     "description": "My own version of the Slim basic boilerplate",
     "keywords": [],
     "homepage": "http://github.com/dreadnip/basic-slim",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Dreadnip",
-            "email": "",
-            "homepage": ""
-        }
-    ],
     "require": {
         "php": ">=7.2",
         "slim/slim": "^3.12",
